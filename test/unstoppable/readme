@@ -1,0 +1,5 @@
+本题思路：
+flashloadn函数内部检查：assert(poolBalance == balanceBefore)，poolBalance的唯一来源是function depositTokens(uint256 amount) external nonReentrant函数，
+但是balanceBefore的来源除了depositTokens，还有其他地址向pool中转入token。
+学习到的知识点
+通过contract.connect(providerorsigner)，可以实现指定调用合约的地址为providerorsigner
